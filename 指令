@@ -4,3 +4,9 @@
 删除用户组 groupdel 组名
 用户组修改 usermod -g 组名 用户名
 切换运行级别 init X
+
+找回root密码
+开机按'e'进入编辑模式 在Linux16行末尾输入：init=/bin=/sh
+输入：mount -o remount.rw /
+设置密码后输入 touch /.autorelabel
+exec /sbin/init 回车等待重启
