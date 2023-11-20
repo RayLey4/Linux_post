@@ -10,3 +10,19 @@
 输入：mount -o remount.rw /
 设置密码后输入 touch /.autorelabel
 exec /sbin/init 回车等待重启
+
+创建目录 mkdir 目录名
+创建多层级目录 mkdir -p 目录名/目录名
+vim 文件名 #创建新文件
+touch 文件名 #创建空白文件
+拷贝文件 cp Source destin
+拷贝整个目录 cp -r Source Destin
+强制覆盖不跳提示 \cp
+删除文件 rm
+强制删除不提示 -f
+
+mv 移动文件/目录或重命名
+mv OldFileName NewFileName #重命名文件
+mv /temp/mvfile /TargetFolder #移动文件
+cat 查看文件内容
+cat -n 显示行号
