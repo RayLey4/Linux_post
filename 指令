@@ -3,7 +3,7 @@
 增加用户组 groupadd 组名
 删除用户组 groupdel 组名
 用户组修改 usermod -g 组名 用户名
-切换运行级别 init X
+切换运行级别 init X (常用的是3-多用户有网络状态 5-图形界面)
 
 找回root密码
 开机按'e'进入编辑模式 在Linux16行末尾输入：init=/bin=/sh
@@ -52,8 +52,33 @@ date -s '时间' （设置系统当前时间，如date -s '2023-11-28 15:40:20'�
 
 cal [年份/月份] (不加选项时为显示本月日历)
 
+搜索查找类
 find (从指定目录向下递归查找文件或目录)
 find [搜索范围] [选项]
 例如：find /home -name hello.txt/*.txt (根据文件名查找)
 find /opt /user jack (按照用户名查找)
+find /size +200M (寻找整个系统下大于200M的文件)
+
+Locate 基于数据库搜索文件（第一次运行前，必须使用updatedb指令创建locate数据库）
+grep 过滤查找
+-n 显示匹配行及行号
+-i 忽略大小写
+例如：写法一： cat /home/hello.txt | grep -n 'yes'(在hello.txt文件中查找yes所在行)
+写法二： grep -n 'yes' /home/hello.txt
+
+压缩文件指令
+gzip /地址/文件名
+gunzip /地址/文件名
+
+zip 用于压缩文件或文件夹
+-r 递归压缩，即压缩目录
+unzip 用于解压缩
+-d /目录名 （指定解压后文件的存放目录）
+
+tar 打包指令 打包文件后缀为.tar.gz
+-c 产生.tar打包文件
+-v 显示详细信息
+-f 指定压缩后的文件名
+-z 打包同时压缩
+-x 解包.tar文件
 
