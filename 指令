@@ -94,3 +94,21 @@ rwx权限
 修改所有者和所在组
 chown newowner 文件/目录 修改文件/目录所有者
 chown newowner:newgroup 文件/目录 修改文件/目录所在组
+
+crond 任务调度
+crontab -e 编辑定时任务
+crontab -l 查询定时任务
+crontab -r 删除当前用户的所有定时任务
+
+at 一次性定时任务
+ps -ef | grep atd 检测atd是否在运行
+at [选项][时间]
+ctrl + D 两次终止命令行
+atq 查询系统中还未执行的命令
+atrm 移除任务
+
+Linux磁盘分区
+lsblk 查看硬盘分区
+例：crontab -e
+*/1**** ls -l /etc/ > /tmp/to.txt
+上述命令为每分钟执行一次ls -l /etc/ > /tmp/to.txt
