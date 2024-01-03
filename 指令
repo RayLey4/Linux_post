@@ -112,3 +112,5 @@ lsblk 查看硬盘分区
 例：crontab -e
 */1**** ls -l /etc/ > /tmp/to.txt
 上述命令为每分钟执行一次ls -l /etc/ > /tmp/to.txt
+
+mkfs -t ext4 /dev/磁盘名
