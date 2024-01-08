@@ -113,4 +113,16 @@ lsblk 查看硬盘分区
 */1**** ls -l /etc/ > /tmp/to.txt
 上述命令为每分钟执行一次ls -l /etc/ > /tmp/to.txt
 
-mkfs -t ext4 /dev/磁盘名
+mkfs -t ext4 /dev/磁盘名 格式化磁盘
+mount /dev/磁盘名 /目录名 将磁盘挂载到目录下
+umount /dev/磁盘名 或者 umount /newdisk 取消挂载
+(用命令行挂载硬盘后重启会失效)
+
+系统磁盘使用情况查询
+df -h 查询整体使用情况
+du -h /目录 查询指定目录的磁盘使用情况
+-s 指定目录占用大小汇总
+-h 待计量单位
+-a 含文件
+--max-depth=1 子目录深度
+-c 列出明细的同时，增加汇总值
