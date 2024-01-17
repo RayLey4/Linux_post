@@ -126,3 +126,17 @@ du -h /目录 查询指定目录的磁盘使用情况
 -a 含文件
 --max-depth=1 子目录深度
 -c 列出明细的同时，增加汇总值
+
+Linux网络配置
+指定静态IP vi /etc/sysconfig/network-scripts/ifcfg-ens33
+修改Hostname vi /etc/hostnames
+
+进程命令
+ps -a 查看当前终端的所有进程
+-u 以用户的格式显示
+-x 显示后台运行的参数
+
+kill 终止进程
+| grep sshd 搜索所有远程登陆进程
+pstree 以树状形式显示进程信息
+-p 显示进程号
