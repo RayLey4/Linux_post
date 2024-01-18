@@ -140,3 +140,7 @@ kill 终止进程
 | grep sshd 搜索所有远程登陆进程
 pstree 以树状形式显示进程信息
 -p 显示进程号
+
+服务管理
+ls -l /etc/init.d 查看service指令管理的服务
+service 服务 [status | stop | start | reload]
