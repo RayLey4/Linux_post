@@ -144,3 +144,9 @@ pstree 以树状形式显示进程信息
 服务管理
 ls -l /etc/init.d 查看service指令管理的服务
 service 服务 [status | stop | start | reload]
+
+RPM管理
+rpm -qa 查询安装的程序包
+rpm -qf /全路径 查询文件所属的软件包
+rpm -qi 查询软件包信息
+rpm -e 删除软件包
