@@ -1,0 +1,34 @@
+#In serverb--NFS server
+#Install NfS and rpcbind
+dnf install -y rpcbind
+dnf install -y nfs-utils
+# create sharefolder
+mkdir -p /rhome/lapuser0
+touch /rhome/lapuser0/file1
+#change mod
+chmod 775 /rhome
+#create file share and permission
+vim exports
+/rhome/lapuser0 *(rw,sync.no_root_squash) 
+#enable nfs server
+systemctl enable --now nfs-server
+#give service access to firewall
+firewall-cmd --add-service=nfs --permanent
+firewall-cmd --add-service=rpc-bind --permanent
+firewall-cmd --add-service=mountd --permanent
+firewall-cmd --reload
+#check exports service
+exportfs -v
+
+#In servera --NFS Client
+dnf install -y autofs
+#create the same share node folder
+mkdir /rhome
+#modify the autofs config files
+vim auto.master
+/rhome /etc/auto.nfs
+vim auto.nfs
+lapuser0 -rw 10.0.2.97:/rhome/lapuser0
+systemctl restart autofs.service
+
+
