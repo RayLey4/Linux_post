@@ -1,0 +1,5 @@
+systemctl status chronyd # check if NTP service running
+dnf install -y chrony # install chrony if not installed
+systemctl enable chronyd
+systemctl start chronyd
+vi /etc/chrony.conf
