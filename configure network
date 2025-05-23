@@ -1,0 +1,13 @@
+# show network device
+nmcli device
+# show GUI network configuration
+nmtui
+# configure network by nmcli command
+nmcli connection modify [devicename] ipv4.address xxx.xxx.xxx.xxx/submask
+nmcli connection modify [devicename] ipv4.gateway xxx.xxx.xxx.x
+nmcli connection modify [devicename] ipv4.dns xxx.xxx.xxx.xxx
+nmcli connection modify [devicename] ipv4.method manual/dhcp
+nmcli connection down [devicename]
+nmcli connection up [devicename]
+# configuration file
+vi /etc/NetworkManager/system-connections
