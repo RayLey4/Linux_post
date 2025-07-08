@@ -1,0 +1,15 @@
+# 1. reset the root account
+#reboot the system
+reboot
+#press e to edit grub 
+e
+#input rd.break in the end of linux line
+rd.break #ctrl + x to boot
+#remount the system as read and write mode
+switch_root# mount -o remount,rw/sysroot
+# change account
+chroot /sysroot
+# change the password of root
+passwd root
+exit
+exit
